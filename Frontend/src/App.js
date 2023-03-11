@@ -1,32 +1,33 @@
-import logo from './logo.svg';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Page1 from './pages/page1';
-import Menu from "./components/Menu";
+import Page1 from './pages/Page1';
+import Sidebar from "./components/Sidebar";
+import Tobpbar from "./components/Topbar"
+import Toolbar from '@mui/material/Toolbar';
 
 function App() {
+
+  const drawerWidth = 200;
+
   return (
     <>
-    
-    
-    
 
-    <BrowserRouter>
-    <Menu/>
+      <BrowserRouter>
+
+
+        <Sidebar width={drawerWidth} />
+        <Toolbar />
+        <Tobpbar />
+
 
         <Routes>
-          <Route index element={<p>Too lazy to make home page</p>} />
-          <Route path="page1" element={<Page1/>} />
+          <Route index element={<p style={{ marginLeft: drawerWidth }}> home page</p>} />
+          <Route path="page1" element={<Page1 width={drawerWidth} />} />
 
         </Routes>
       </BrowserRouter>
-    
-    
-    
-    
-    
-    
+      
     </>
-   
+
 
 
   );
