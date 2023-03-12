@@ -55,8 +55,8 @@ export default function Sidebar({width}) {
                 <Box sx={{ overflow: 'auto' }}>
                     <List>
                         <PageLink text="Home" link="/" icon={<HomeIcon />} />
-                        <PageLink text="Page 1" link="/page1" icon={<CalculateIcon />} />
-                        <PageLink text="Page 2" link="/page1" icon={<FunctionsIcon />} />
+                        <PageLink text="Family" link="/page1" icon={<CalculateIcon />} />
+                        <PageLink text="Dynamical Systems" link="/page2" icon={<FunctionsIcon />} />
                     </List>
                 </Box>
             </Drawer>

@@ -11,10 +11,10 @@ export default function Topbar() {
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
 
-            <AppBar
+            <AppBar style={{ background: '#2E3B55' }}
                 position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
                 <Toolbar>
-                    <Typography variant="h6" noWrap component="div">
+                    <Typography variant="h7" noWrap component="div">
                         Arithmetic Dynamical Systems
                     </Typography>
                 </Toolbar>
