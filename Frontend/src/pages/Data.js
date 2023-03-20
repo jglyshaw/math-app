@@ -13,7 +13,7 @@ function Data({ width }) {
       });
   }, []);
 
-  return <p style={{ marginLeft: width }}>Test</p>;
+  return <p style={{ marginLeft: width }}>test</p>;
 }
 
 export default Data;
