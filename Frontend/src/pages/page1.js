@@ -5,8 +5,18 @@ import Typography from '@mui/material/Typography';
 
 function Page1({ width }) {
 
+
+
+    const toggleTree = (event) => {
+        let el = event.target;
+        el.parentElement.querySelector(".nested").classList.toggle("active");
+        el.classList.toggle("caret-down");
+        console.log(el)
+    }
+
     return (
         <>
+
 
 
             <Box component="main" style={{ marginLeft: width }} sx={{ flexGrow: 1, p: 3 }}>
@@ -38,6 +48,16 @@ function Page1({ width }) {
                     eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
                     posuere sollicitudin aliquam ultrices sagittis orci a.
                 </Typography>
+
+
+                <ul id="myUL">
+                    <li><span className="caret" onClick = {toggleTree}>Beverages</span>
+                        <ul className="nested">
+               gsege
+                        </ul>
+                    </li>
+                </ul>
+
             </Box>
 
 
@@ -46,6 +66,7 @@ function Page1({ width }) {
 
         </>
     )
+
 }
 
 export default Page1;

@@ -8,7 +8,6 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-
 import HomeIcon from '@mui/icons-material/Home';
 import CalculateIcon from '@mui/icons-material/Calculate';
 import FunctionsIcon from '@mui/icons-material/Functions';
@@ -55,7 +54,7 @@ export default function Sidebar({width}) {
                 <Box sx={{ overflow: 'auto' }}>
                     <List>
                         <PageLink text="Home" link="/" icon={<HomeIcon />} />
-                        <PageLink text="Family" link="/page1" icon={<CalculateIcon />} />
+                        {/* <PageLink text="Family" link="/page1" icon={<CalculateIcon />} /> */}
                         <PageLink text="Dynamical Systems" link="/page2" icon={<FunctionsIcon />} />
                     </List>
                 </Box>
