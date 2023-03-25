@@ -7,12 +7,6 @@ function Page1({ width }) {
 
 
 
-    const toggleTree = (event) => {
-        let el = event.target;
-        el.parentElement.querySelector(".nested").classList.toggle("active");
-        el.classList.toggle("caret-down");
-        console.log(el)
-    }
 
     return (
         <>
@@ -50,13 +44,6 @@ function Page1({ width }) {
                 </Typography>
 
 
-                <ul id="myUL">
-                    <li><span className="caret" onClick = {toggleTree}>Beverages</span>
-                        <ul className="nested">
-               gsege
-                        </ul>
-                    </li>
-                </ul>
 
             </Box>
 

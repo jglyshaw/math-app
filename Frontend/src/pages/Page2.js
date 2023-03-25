@@ -1,12 +1,9 @@
 
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Divider from '@mui/material/Divider';
-import Checkbox from '@mui/material/Checkbox';
+import DataTable from '../components/DataTable';
+import  { useState } from 'react';
 
 function Page1({ width }) {
 
@@ -17,24 +14,17 @@ function Page1({ width }) {
         console.log(el)
     }
 
-    const checkBoxStyle = {
-        paddingTop: 0,
-        paddingBottom: 0
-    }
-
     const textBoxStyle = {
         width: "80px",
         marginRight: "12px"
     }
-
-
+    const [dimension, setDimension] = useState(0);
 
     return (
         <>
             <div style={{ marginLeft: width }}>
 
                 <Grid container style={{ height: "600px", padding: "20px" }} >
-
 
 
                     <Grid item xs={3} style={{ backgroundColor: '#B6D1EE', borderRadius: "25px" }}  >
@@ -55,11 +45,12 @@ function Page1({ width }) {
                                         <br />
                                         <input type="text" style={textBoxStyle} />
                                         <label>Custom</label>
+                                        <br />  <br />
                                     </ul>
                                 </li>
                             </ul>
 
-                            <br />
+
 
                             <ul id="myUL">
                                 <li><span className="caret" onClick={toggleTree}>Degree</span>
@@ -75,11 +66,12 @@ function Page1({ width }) {
                                         <br />
                                         <input type="text" style={textBoxStyle} />
                                         <label>Custom</label>
+                                        <br /> <br />
                                     </ul>
                                 </li>
                             </ul>
 
-                            <br />
+
 
                             <ul id="myUL">
                                 <li><span className="caret" onClick={toggleTree}>Class</span>
@@ -89,10 +81,11 @@ function Page1({ width }) {
                                         <br />
                                         <input type="checkbox" />
                                         <label>Family</label>
+                                        <br /> <br />
                                     </ul>
                                 </li>
                             </ul>
-                            <br />
+
                             <ul id="myUL">
                                 <li><span className="caret" onClick={toggleTree}>Type</span>
                                     <ul className="nested">
@@ -138,8 +131,6 @@ function Page1({ width }) {
                             <ul id="myUL">
                                 <li><span className="caret" onClick={toggleTree}>Indeterminacy Locus</span>
                                     <ul className="nested">
-
-
                                     </ul>
                                 </li>
                             </ul>
@@ -152,30 +143,15 @@ function Page1({ width }) {
                     <Grid item xs={6} style={{ padding: "20px" }}>
                         <span style={{ float: "right", color: "red" }}>Download</span>
                         <p style={{ textAlign: "center", marginTop: 0 }}>Results</p>
-
-                        <table >
-                            <tr>
-                                <th>Label</th>
-                                <th>Domain</th>
-                                <th>Degree</th>
-                                <th>Polynomials</th>
-                                <th>Field</th>
-                            </tr>
-                            <tr style={{ textAlign: 'center' }}>
-                                <td>1.2.f4075c4e.1</td>
-                                <td>P<sup>1</sup> {String.fromCharCode(8594)} P<sup>1</sup></td>
-                                <td>2</td>
-                                <td>[x^2 : y^2] </td>
-                                <td>QQ</td>
-                            </tr>
-                            <tr style={{ textAlign: 'center' }}>
-                                <td>1.2.3cf16159.1</td>
-                                <td>P<sup>1</sup> {String.fromCharCode(8594)} P<sup>1</sup></td>
-                                <td>2</td>
-                                <td>[x^2 + y^2 : y^2]  </td>
-                                <td>QQ</td>
-                            </tr>
-                        </table>
+                        <DataTable
+                            labels={['Label', 'Domain', 'Degree', 'Polynomials', 'Field']}
+                            data={
+                                [
+                                    ['1.2.f4075c4e.1', <>P<sup>1</sup> {String.fromCharCode(8594)} P<sup>1</sup></>, '2', '[x^2 : y^2]', 'QQ'],
+                                    ['1.2.3cf16159.1', <>P<sup>1</sup> {String.fromCharCode(8594)} P<sup>1</sup></>, '2', '[x^2 + y^2 : y^2]', 'QQ']
+                                ]
+                            }
+                        />
                     </Grid>
 
 
@@ -192,65 +168,65 @@ function Page1({ width }) {
                             <input type="text" style={{ float: "right", ...textBoxStyle }} />
 
 
-                            <br />
+
                             <br />
 
                             <ul id="myUL">
                                 <li><span className="caret" onClick={toggleTree}>Number PCF</span>
-                                <input type="text" style={{ float: "right", ...textBoxStyle }} />
+                                    <input type="text" style={{ float: "right", ...textBoxStyle }} />
                                     <ul className="nested">
 
                                     </ul>
                                 </li>
                             </ul>
 
-                            <br />
+
 
                             <ul id="myUL">
                                 <li><span className="caret" onClick={toggleTree}>Average #Periodic</span>
-                                <input type="text" style={{ float: "right", ...textBoxStyle }} />
+                                    <input type="text" style={{ float: "right", ...textBoxStyle }} />
                                     <ul className="nested">
 
                                     </ul>
                                 </li>
                             </ul>
-                            <br />
+
                             <ul id="myUL">
                                 <li><span className="caret" onClick={toggleTree}>Average #Preperiodic</span>
-                                <input type="text" style={{ float: "right", ...textBoxStyle }} />
+                                    <input type="text" style={{ float: "right", ...textBoxStyle }} />
                                     <ul className="nested">
                                     </ul>
                                 </li>
                             </ul>
-                            <br />
+
                             <ul id="myUL">
                                 <li><span className="caret" onClick={toggleTree}>Average #Aut</span>
-                                <input type="text" style={{ float: "right", ...textBoxStyle }} />
+                                    <input type="text" style={{ float: "right", ...textBoxStyle }} />
                                     <ul className="nested">
                                     </ul>
                                 </li>
                             </ul>
-                            <br />
+
                             <ul id="myUL">
                                 <li><span className="caret" onClick={toggleTree}>Average Height</span>
-                                <input type="text" style={{ float: "right", ...textBoxStyle }} />
+                                    <input type="text" style={{ float: "right", ...textBoxStyle }} />
                                     <ul className="nested">
                                     </ul>
                                 </li>
                             </ul>
-                            <br />
+
                             <ul id="myUL">
-                                <li><span className="caret" onClick={toggleTree}>Average smallest <br/>
+                                <li><span className="caret" onClick={toggleTree}>Average smallest <br />
                                     canonical height</span>
                                     <input type="text" style={{ float: "right", ...textBoxStyle }} />
                                     <ul className="nested">
                                     </ul>
                                 </li>
                             </ul>
-                            <br />
+
                             <ul id="myUL">
                                 <li><span className="caret" onClick={toggleTree}>Average Resultant</span>
-                                <input type="text" style={{ float: "right", ...textBoxStyle }} />
+                                    <input type="text" style={{ float: "right", ...textBoxStyle }} />
                                     <ul className="nested">
                                     </ul>
                                 </li>
