@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 
 function Data({ width }) {
   const [data, setData] = useState([]);
